@@ -23,7 +23,6 @@ body {
   font-family: 'Cormorant Garamond', serif;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
 }
 
 /* Floating hearts animation */
@@ -292,11 +291,13 @@ body {
 /* Success Page Styles */
 .container.success {
   min-height: 100vh;
+  height: auto;
   overflow-y: auto;
   overflow-x: hidden;
   align-items: flex-start;
   padding: 0;
   background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 25%, #ffd9e7 50%, #ffcade 75%, #ffbbd5 100%);
+  -webkit-overflow-scrolling: touch;
 }
 
 .success-content {
@@ -304,6 +305,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 0;
+  min-height: 100vh;
 }
 
 /* Success Hero Section */
