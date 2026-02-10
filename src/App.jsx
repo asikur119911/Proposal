@@ -9,7 +9,7 @@ function App() {
   const [yesBtnSize, setYesBtnSize] = useState(1);
   const [clickCount, setClickCount] = useState(0);
   const music1 = useRef(new Audio('/music1.mp3'));
-  const music2 = useRef(new Audio('/music1.mp3'));
+  const music2 = useRef(new Audio('/music2.mp3'));
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -33,8 +33,8 @@ function App() {
     
     // Increase click count and make Yes button bigger, No button smaller
     setClickCount(prev => prev + 1);
-    setYesBtnSize(prev => Math.min(prev + 0.2, 2.5));
-    setNoBtnSize(prev => Math.max(prev - 0.1, 0.5));
+    setYesBtnSize(prev => Math.min(prev + 0.25, 3));
+    setNoBtnSize(prev => Math.max(prev - 0.12, 0.4));
     
     // Get the white card boundaries
     if (cardRef.current) {
@@ -63,24 +63,150 @@ function App() {
     return (
       <div className="container success">
         <div className="success-content">
-          <div className="heart-animation">
-            <span className="heart">💕</span>
-            <span className="heart">💖</span>
-            <span className="heart">💗</span>
-          </div>
-          <h1 className="romantic-text success-title">Yay! I knew you'd say yes!</h1>
-          <div className="image-grid">
-            <div className="img-wrapper">
-              <img src="/photo2.jpg" alt="Us together 1" className="success-img" />
-              <div className="img-overlay"></div>
+          {/* Hero Section */}
+          <div className="success-hero">
+            <div className="heart-burst">
+              <span className="burst-heart">💕</span>
+              <span className="burst-heart">💖</span>
+              <span className="burst-heart">💗</span>
+              <span className="burst-heart">💝</span>
+              <span className="burst-heart">💓</span>
             </div>
-            <div className="img-wrapper">
-              <img src="/photo3.jpg" alt="Us together 2" className="success-img" />
-              <div className="img-overlay"></div>
-            </div>
+            <h1 className="success-title">She said Yes!</h1>
+            <p className="success-subtitle">This is where our forever begins...</p>
           </div>
-          <p className="sub-text">I love you so much! ❤️</p>
-          <p className="date-text">This Valentine's Day 2026</p>
+
+          {/* Scrollable Content */}
+          <div className="memory-timeline">
+            
+            {/* Memory 1 */}
+            <div className="memory-card">
+              <div className="memory-image-wrapper">
+                <img src="/photo1.jpg" alt="Our first moment" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">The Day We Met</h3>
+                <p className="memory-description">
+                  From the first moment I saw you, I knew you were special. 
+                  Your smile lit up my entire world.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="heart-divider">
+              <span className="divider-heart">❤️</span>
+            </div>
+
+            {/* Memory 2 */}
+            <div className="memory-card reverse">
+              <div className="memory-image-wrapper">
+                <img src="/photo2.jpg" alt="Our adventure" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">Every Moment Together</h3>
+                <p className="memory-description">
+                  Every second with you feels like a beautiful dream. 
+                  You make the ordinary feel extraordinary.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="heart-divider">
+              <span className="divider-heart">💕</span>
+            </div>
+
+            {/* Memory 3 */}
+            <div className="memory-card">
+              <div className="memory-image-wrapper">
+                <img src="/photo3.jpg" alt="Special times" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">Your Laughter</h3>
+                <p className="memory-description">
+                  Your laugh is my favorite sound. It's the music that plays 
+                  in my heart, making everything better.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="heart-divider">
+              <span className="divider-heart">💖</span>
+            </div>
+
+            {/* Memory 4 */}
+            <div className="memory-card reverse">
+              <div className="memory-image-wrapper">
+                <img src="/photo4.jpg" alt="Together forever" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">My Safe Haven</h3>
+                <p className="memory-description">
+                  In your arms, I found my home. With you, I am complete, 
+                  loved, and endlessly happy.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="heart-divider">
+              <span className="divider-heart">💗</span>
+            </div>
+
+            {/* Memory 5 */}
+            <div className="memory-card">
+              <div className="memory-image-wrapper">
+                <img src="/photo5.jpg" alt="Our journey" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">Growing Together</h3>
+                <p className="memory-description">
+                  Every day with you is a new adventure. I can't wait to see 
+                  what beautiful memories we'll create next.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="heart-divider">
+              <span className="divider-heart">💝</span>
+            </div>
+
+            {/* Memory 6 */}
+            <div className="memory-card reverse">
+              <div className="memory-image-wrapper">
+                <img src="/photo6.jpg" alt="Forever love" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">Forever & Always</h3>
+                <p className="memory-description">
+                  This Valentine's Day marks just the beginning. I promise to 
+                  love you, cherish you, and stand by you always.
+                </p>
+              </div>
+            </div>
+
+            {/* Final Message */}
+            <div className="final-message">
+              <div className="love-quote">
+                <p className="quote-text">"In all the world, there is no heart for me like yours."</p>
+                <p className="quote-author">— My Heart to Yours</p>
+              </div>
+              <div className="signature">
+                <p className="signature-text">I Love You So Much</p>
+                <p className="date-text">Valentine's Day 2026</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     );
@@ -94,6 +220,7 @@ function App() {
         <span className="float-heart">💖</span>
         <span className="float-heart">💗</span>
         <span className="float-heart">💝</span>
+        <span className="float-heart">💓</span>
       </div>
       
       <div className="card" ref={cardRef}>
@@ -102,19 +229,19 @@ function App() {
           <div className="img-glow"></div>
         </div>
         
-        <h1 className="romantic-text main-title">
+        <h1 className="main-title">
           Will you be my Valentine?
         </h1>
         
         {clickCount > 0 && (
           <p className="hint-text">
-            {clickCount < 3 ? "Please? 🥺" : clickCount < 5 ? "Pretty please? 💕" : "I really love you! 💖"}
+            {clickCount < 3 ? "Please? 🥺" : clickCount < 5 ? "Pretty please? 💕" : clickCount < 8 ? "I really love you! 💖" : "You're my everything! 🌟"}
           </p>
         )}
         
         <div className="btn-group">
           <button 
-            className="proposal-btn" 
+            className="proposal-btn yes-btn" 
             onClick={handleYes}
             style={{ 
               transform: `scale(${yesBtnSize})`,
@@ -125,7 +252,7 @@ function App() {
           </button>
           
           <button 
-            className="proposal-btn"
+            className="proposal-btn no-btn"
             onMouseEnter={moveNo}
             onTouchStart={(e) => {
               e.preventDefault();
