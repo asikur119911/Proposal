@@ -31,18 +31,17 @@ function App() {
     // Mark that button has been moved (triggers position: fixed)
     setNoButtonMoved(true);
     
-    // Increase click count and make Yes button bigger, No button smaller
+    // Increase click count and make Yes button bigger (No button stays same size)
     setClickCount(prev => prev + 1);
     setYesBtnSize(prev => Math.min(prev + 0.25, 3));
-    setNoBtnSize(prev => Math.max(prev - 0.12, 0.4));
     
     // Get the white card boundaries
     if (cardRef.current) {
       const card = cardRef.current.getBoundingClientRect();
       
-      // Button dimensions (approximate)
-      const btnWidth = 120 * noBtnSize;
-      const btnHeight = 60 * noBtnSize;
+      // Button dimensions (approximate, using base size)
+      const btnWidth = 120;
+      const btnHeight = 60;
       
       // Calculate safe area within the card (with padding from edges)
       const padding = 20;
@@ -262,13 +261,9 @@ function App() {
               position: 'fixed', 
               top: noPos.top, 
               left: noPos.left,
-              transform: `scale(${noBtnSize})`,
               transition: 'all 0.15s ease',
               zIndex: 999
-            } : {
-              transform: `scale(${noBtnSize})`,
-              transition: 'transform 0.3s ease'
-            }}
+            } : {}}
           >
             No
           </button>
