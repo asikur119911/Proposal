@@ -35,27 +35,22 @@ function App() {
     setClickCount(prev => prev + 1);
     setYesBtnSize(prev => Math.min(prev + 0.25, 3));
     
-    // Get the white card boundaries
-    if (cardRef.current) {
-      const card = cardRef.current.getBoundingClientRect();
-      
-      // Button dimensions (approximate, using base size)
-      const btnWidth = 120;
-      const btnHeight = 60;
-      
-      // Calculate safe area within the card (with padding from edges)
-      const padding = 20;
-      const minX = card.left + padding;
-      const maxX = card.right - btnWidth - padding;
-      const minY = card.top + padding;
-      const maxY = card.bottom - btnHeight - padding;
-      
-      // Generate random position within card boundaries
-      const x = Math.random() * (maxX - minX) + minX;
-      const y = Math.random() * (maxY - minY) + minY;
-      
-      setNoPos({ top: `${y}px`, left: `${x}px` });
-    }
+    // Get viewport boundaries instead of card boundaries
+    const btnWidth = 140;
+    const btnHeight = 60;
+    
+    // Calculate safe area within the viewport
+    const padding = 15;
+    const minX = padding;
+    const maxX = window.innerWidth - btnWidth - padding;
+    const minY = padding;
+    const maxY = window.innerHeight - btnHeight - padding;
+    
+    // Generate random position within viewport boundaries
+    const x = Math.random() * (maxX - minX) + minX;
+    const y = Math.random() * (maxY - minY) + minY;
+    
+    setNoPos({ top: `${y}px`, left: `${x}px` });
   };
 
   if (isAccepted) {

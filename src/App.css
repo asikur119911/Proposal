@@ -308,11 +308,11 @@ body {
 
 /* Success Page Styles */
 .container.success {
+  display: block;
   min-height: 100vh;
   height: auto;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
-  align-items: flex-start;
   padding: 0;
   background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 25%, #ffd9e7 50%, #ffcade 75%, #ffbbd5 100%);
   -webkit-overflow-scrolling: touch;
@@ -329,9 +329,9 @@ body {
 /* Success Hero Section */
 .success-hero {
   text-align: center;
-  padding: 60px 20px 40px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 245, 250, 0.3) 100%);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 50px 20px 35px;
+  background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
+  border-bottom: none;
   position: relative;
   overflow: hidden;
 }
@@ -427,15 +427,15 @@ body {
 
 /* Memory Timeline */
 .memory-timeline {
-  padding: 30px 15px 60px;
+  padding: 0;
   width: 100%;
 }
 
 .memory-card {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-bottom: 50px;
+  gap: 0;
+  margin-bottom: 0;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -503,7 +503,8 @@ body {
 
 .memory-text {
   text-align: center;
-  padding: 20px 20px;
+  padding: 25px 20px 35px 20px;
+  background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
 }
 
 .memory-title {
@@ -528,7 +529,8 @@ body {
 /* Heart Dividers */
 .heart-divider {
   text-align: center;
-  margin: 40px 0;
+  padding: 25px 0;
+  background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
   opacity: 0;
   animation: fadeIn 0.6s ease forwards;
 }
@@ -560,12 +562,11 @@ body {
 /* Final Message */
 .final-message {
   text-align: center;
-  padding: 50px 20px 40px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 245, 250, 0.4) 100%);
+  padding: 50px 20px 60px;
+  background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 100%);
   border-radius: 0;
-  margin-top: 50px;
-  box-shadow: 
-    0 -10px 30px rgba(255, 107, 157, 0.1);
+  margin-top: 0;
+  box-shadow: none;
 }
 
 .love-quote {
@@ -712,16 +713,16 @@ body {
   }
 
   .memory-timeline {
-    padding: 25px 10px 50px;
+    padding: 0;
   }
 
   .memory-card {
-    gap: 15px;
-    margin-bottom: 35px;
+    gap: 0;
+    margin-bottom: 0;
   }
 
   .memory-text {
-    padding: 15px 15px;
+    padding: 20px 15px 30px 15px;
   }
 
   .memory-title {
@@ -742,8 +743,12 @@ body {
   }
 
   .final-message {
-    padding: 40px 15px 30px;
-    margin-top: 35px;
+    padding: 40px 15px 50px;
+    margin-top: 0;
+  }
+
+  .heart-divider {
+    padding: 20px 0;
   }
 
   .quote-text {
