@@ -9,7 +9,7 @@ function App() {
   const [yesBtnSize, setYesBtnSize] = useState(1);
   const [clickCount, setClickCount] = useState(0);
   const music1 = useRef(new Audio('/music1.mp3'));
-  const music2 = useRef(new Audio('/music2.mp3'));
+  const music2 = useRef(new Audio('/music1.mp3'));
   const cardRef = useRef(null);
 
   useEffect(() => {
