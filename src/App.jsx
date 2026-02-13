@@ -6,7 +6,7 @@ function App() {
   const [noButtonMoved, setNoButtonMoved] = useState(false);
   const [noPos, setNoPos] = useState({ top: 'auto', left: 'auto' });
   const [clickCount, setClickCount] = useState(0);
-  const music1 = useRef(new Audio('/music1.mp3'));
+  const music1 = useRef(new Audio('/first.mp3'));
   const music2 = useRef(new Audio('/m2.mp3'));
   const cardRef = useRef(null);
 
@@ -17,6 +17,16 @@ function App() {
 
     // Allow audio to loop if needed
     music2.current.loop = true;
+
+    // Attempt to autoplay music1
+    const playPromise = music1.current.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log("Autoplay prevented:", error);
+        // Autoplay was prevented. This is expected in some browsers.
+        // User interaction will be required.
+      });
+    }
   }, []);
 
   const handleYes = () => {
@@ -76,7 +86,7 @@ function App() {
             {/* Memory 1 */}
             <div className="memory-card">
               <div className="memory-image-wrapper">
-                <img src="/photo1.jpg" alt="Our first moment" className="memory-img" />
+                <img src="/11.jpg" alt="Our first moment" className="memory-img" />
                 <div className="image-shine"></div>
               </div>
               <div className="memory-text">
@@ -93,7 +103,7 @@ function App() {
             {/* Memory 2 */}
             <div className="memory-card">
               <div className="memory-image-wrapper">
-                <img src="/photo2.jpg" alt="Our adventure" className="memory-img" />
+                <img src="/12.jpg" alt="Our adventure" className="memory-img" />
                 <div className="image-shine"></div>
               </div>
               <div className="memory-text">
@@ -110,7 +120,7 @@ function App() {
             {/* Memory 3 */}
             <div className="memory-card">
               <div className="memory-image-wrapper">
-                <img src="/photo3.jpg" alt="Special times" className="memory-img" />
+                <img src="/13.jpg" alt="Special times" className="memory-img" />
                 <div className="image-shine"></div>
               </div>
               <div className="memory-text">
@@ -127,7 +137,7 @@ function App() {
             {/* Memory 4 */}
             <div className="memory-card">
               <div className="memory-image-wrapper">
-                <img src="/photo4.jpg" alt="Together forever" className="memory-img" />
+                <img src="/14.jpg" alt="Together forever" className="memory-img" />
                 <div className="image-shine"></div>
               </div>
               <div className="memory-text">
@@ -144,7 +154,7 @@ function App() {
             {/* Memory 5 */}
             <div className="memory-card">
               <div className="memory-image-wrapper">
-                <img src="/photo5.jpg" alt="Our journey" className="memory-img" />
+                <img src="/15.jpg" alt="Our journey" className="memory-img" />
                 <div className="image-shine"></div>
               </div>
               <div className="memory-text">
@@ -157,6 +167,23 @@ function App() {
             </div>
 
             <div className="heart-divider"><span className="divider-heart">💝</span></div>
+
+            {/* Memory - Movie Date */}
+            <div className="memory-card">
+              <div className="memory-image-wrapper">
+                <img src="/17.jpg" alt="Movie Date" className="memory-img" />
+                <div className="image-shine"></div>
+              </div>
+              <div className="memory-text">
+                <h3 className="memory-title">Time Together</h3>
+                <p className="memory-description">
+                  It's not just about the movie, it's about the feeling of being close to you.
+                  Any time spent with you becomes my favorite memory.
+                </p>
+              </div>
+            </div>
+
+            <div className="heart-divider"><span className="divider-heart">💕</span></div>
 
             {/* Memory 6 */}
             <div className="memory-card">
@@ -177,6 +204,7 @@ function App() {
             <div className="final-message">
               <div className="love-quote">
                 <p className="quote-text">"You are my heart, my life, my one and only thought."</p>
+                <p className="quote-text">"I love you soooo muchhh my dear Moina Pakhi"</p>
               </div>
               <div className="signature">
                 <p className="signature-text">Love You Forever</p>
