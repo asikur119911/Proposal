@@ -7,7 +7,7 @@ function App() {
   const [noPos, setNoPos] = useState({ top: 'auto', left: 'auto' });
   const [clickCount, setClickCount] = useState(0);
   const music1 = useRef(new Audio('/music1.mp3'));
-  const music2 = useRef(new Audio('/m2.mp3'));
+  const music2 = useRef(new Audio('/m22.mp3'));
   const cardRef = useRef(null);
 
   useEffect(() => {
