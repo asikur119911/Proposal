@@ -17,7 +17,8 @@
   --text-color: #590d22;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #fff0f5 0%, #fff5fa 50%, #ffe3e8 100%);
@@ -61,32 +62,60 @@ html, body {
 .float-heart {
   position: absolute;
   font-size: 2.5rem;
-  opacity: 0.15; /* More subtle */
+  opacity: 0.15;
+  /* More subtle */
   animation: float 20s infinite ease-in-out;
   color: var(--primary-rose);
 }
 
-.float-heart:nth-child(1) { left: 8%; animation-delay: 0s; }
-.float-heart:nth-child(2) { left: 25%; animation-delay: 4s; }
-.float-heart:nth-child(3) { left: 45%; animation-delay: 8s; }
-.float-heart:nth-child(4) { left: 65%; animation-delay: 12s; }
-.float-heart:nth-child(5) { left: 82%; animation-delay: 16s; }
-.float-heart:nth-child(6) { left: 50%; animation-delay: 2s; }
+.float-heart:nth-child(1) {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.float-heart:nth-child(2) {
+  left: 25%;
+  animation-delay: 4s;
+}
+
+.float-heart:nth-child(3) {
+  left: 45%;
+  animation-delay: 8s;
+}
+
+.float-heart:nth-child(4) {
+  left: 65%;
+  animation-delay: 12s;
+}
+
+.float-heart:nth-child(5) {
+  left: 82%;
+  animation-delay: 16s;
+}
+
+.float-heart:nth-child(6) {
+  left: 50%;
+  animation-delay: 2s;
+}
 
 @keyframes float {
   0% {
     transform: translateY(105vh) rotate(0deg) scale(0.8);
     opacity: 0;
   }
+
   15% {
     opacity: 0.2;
   }
+
   50% {
     transform: translateY(50vh) rotate(180deg) scale(1);
   }
+
   85% {
     opacity: 0.2;
   }
+
   100% {
     transform: translateY(-10vh) rotate(360deg) scale(0.6);
     opacity: 0;
@@ -98,7 +127,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px; /* Reduced padding for mobile */
+  padding: 15px;
+  /* Reduced padding for mobile */
   position: relative;
   z-index: 2;
   width: 100%;
@@ -109,12 +139,13 @@ html, body {
   backdrop-filter: blur(15px);
   padding: 40px 30px;
   border-radius: 30px;
-  box-shadow: 
+  box-shadow:
     0 20px 60px var(--shadow-primary),
     0 10px 20px var(--shadow-deep),
     inset 0 1px 0 rgba(255, 255, 255, 1);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  max-width: 480px; /* Slightly tighter width */
+  max-width: 480px;
+  /* Slightly tighter width */
   width: 100%;
   position: relative;
   animation: cardEntrance 1s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -125,6 +156,7 @@ html, body {
     opacity: 0;
     transform: translateY(50px) scale(0.95);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -141,12 +173,13 @@ html, body {
 
 .main-img {
   width: 100%;
-  aspect-ratio: 4/5; /* Better portrait ratio for mobile */
+  aspect-ratio: 4/5;
+  /* Better portrait ratio for mobile */
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 
+  box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.12),
-    0 5px 15px rgba(0,0,0,0.05);
+    0 5px 15px rgba(0, 0, 0, 0.05);
   display: block;
 }
 
@@ -184,8 +217,15 @@ html, body {
 }
 
 @keyframes bounceIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .btn-group {
@@ -194,9 +234,11 @@ html, body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Ensure buttons wrap if screen is tiny */
+  flex-wrap: wrap;
+  /* Ensure buttons wrap if screen is tiny */
   position: relative;
-  min-height: 60px; /* Reserve space */
+  min-height: 60px;
+  /* Reserve space */
 }
 
 /* IDENTICAL BUTTON STYLING FOR BOTH BUTTONS */
@@ -213,18 +255,19 @@ html, body {
   text-transform: uppercase;
   color: white;
   background: linear-gradient(135deg, var(--primary-rose) 0%, var(--deep-rose) 100%);
-  box-shadow: 
+  box-shadow:
     0 8px 20px var(--shadow-primary),
-    0 4px 10px rgba(0,0,0,0.1);
-  min-width: 140px; /* Ensure visual balance */
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  /* Ensure visual balance */
   text-align: center;
 }
 
 .proposal-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 12px 25px var(--shadow-primary),
-    0 6px 15px rgba(0,0,0,0.15);
+    0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .proposal-btn:active {
@@ -238,16 +281,18 @@ html, body {
   height: auto;
   padding: 0;
   background: #fff0f5;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
 }
 
 .success-content {
   width: 100%;
-  max-width: 600px; /* Limit width for reading ease */
+  max-width: 600px;
+  /* Limit width for reading ease */
   margin: 0 auto;
   min-height: 100vh;
   background: #fff5f8;
-  box-shadow: 0 0 50px rgba(0,0,0,0.05);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
 }
 
 /* Success Hero Section */
@@ -269,9 +314,17 @@ html, body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .success-title {
@@ -377,28 +430,33 @@ html, body {
 
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
+  .success-content {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
   .main-title {
     font-size: 2.5rem;
   }
-  
+
   .card {
-     padding: 30px 20px;
+    padding: 30px 20px;
   }
-  
+
   .proposal-btn {
     padding: 12px 30px;
     font-size: 1.1rem;
     min-width: 120px;
   }
-  
+
   .success-title {
     font-size: 2.8rem;
   }
-  
+
   .memory-title {
     font-size: 1.8rem;
   }
-  
+
   .memory-description {
     font-size: 1.2rem;
   }
@@ -408,7 +466,20 @@ html, body {
   .container {
     padding: 10px;
   }
-  
+
+  /* Ensure success container has no padding on mobile */
+  .container.success {
+    padding: 0;
+  }
+
+  /* Full width for success content */
+  .success-content {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
   .card {
     padding: 25px 15px;
     border-radius: 20px;
@@ -422,31 +493,32 @@ html, body {
     font-size: 2.2rem;
     margin: 15px 0;
   }
-  
+
   .btn-group {
     margin-top: 25px;
     gap: 15px;
   }
-  
+
   .proposal-btn {
     padding: 12px 25px;
     font-size: 1rem;
-    width: 100px; /* Small fixed width for alignment */
+    width: 100px;
+    /* Small fixed width for alignment */
     min-width: unset;
   }
-  
+
   .success-hero {
     padding: 40px 15px 30px;
   }
-  
+
   .success-title {
     font-size: 2.4rem;
   }
-  
+
   .quote-text {
     font-size: 1.5rem;
   }
-  
+
   .signature-text {
     font-size: 2.5rem;
   }
